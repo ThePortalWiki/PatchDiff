@@ -4,99 +4,92 @@ import re
 import time
 import sys
 import shutil
-import chardet
 import fnmatch
+import logging as log
+import argparse
+import chardet
 from prettydiff import poot
 
 from config import config
 
+parser = argparse.ArgumentParser(
+    description="Generate patch diff for Valve games")
+
+parser.add_argument("game",
+                    help="the game to generate a patch diff for e.g. 'tf2'")
+
+parser.add_argument("-v",
+                    "--verbose",
+                    dest="verbose",
+                    action="store_true",
+                    help="be verbose about what we are doing")
+
+args = parser.parse_args()
+print args.game
+print args.verbose
+sys.exit()
+
+log.basicConfig(
+    stream=sys.stderr,
+    format="%(levelname)s: %(message)s",
+    level=log.DEBUG)
+
 
 def compare(sourceDir, targetDir, ignorePattern):
-    """ Compare two directories and return list of missing files from the target directory """
+    """Compare two directories and return list of missing files\
+    from the target directory"""
     missing = []
 
     # verify existence of source directory
-    if os.path.exists(sourceDir) == False:
-        print "sourceDir doesn't exist: %s" % sourceDir
+    if not os.path.exists(sourceDir):
+        log.critical("sourceDir doesn't exist: %s" % sourceDir)
         sys.exit(1)
 
-    if os.path.isdir(sourceDir) == False:
-        print "sourceDir not a directory: %s" % sourceDir
+    if not os.path.isdir(sourceDir):
+        log.critical("sourceDir not a directory: %s" % sourceDir)
         sys.exit(1)
 
     # verify existence of target directory
-    if os.path.exists(targetDir) == False:
-        print "targetDir doesn't exist: %s" % targetDir
+    if not os.path.exists(targetDir):
+        log.critical("targetDir doesn't exist: %s" % targetDir)
         sys.exit(1)
 
-    if os.path.isdir(targetDir) == False:
-        print "targetDir not a directory: %s" % targetDir
+    if not os.path.isdir(targetDir):
+        log.critical("targetDir not a directory: %s" % targetDir)
         sys.exit(1)
 
+    regexp = re.compile(ignorePattern, re.IGNORECASE)
     # walk the sourceDirectory...
     for root, dirs, files in os.walk(sourceDir):
 
         subDir = root.replace(sourceDir, '')
-        targetSubDir = targetDir + subDir
+        targetSubDir = os.path.join(targetDir, subDir)
 
-        regexp = re.compile(ignorePattern, re.IGNORECASE)
+        # skip files if they match our ignore pattern
         result = regexp.search(targetSubDir)
         if result:
-                continue
+            continue
 
         # check to see if targetSubDir exists
-        if os.path.exists(targetSubDir) == False or os.path.isdir(targetSubDir) == False:
-            print
-            print "sourceDir %s not found at %s" % (root, targetSubDir)
-            missing.append(root.replace('\\\\', '\\'))
+        if not os.path.exists(targetSubDir) or not os.path.isdir(targetSubDir):
+            log.warning("sourceDir %s not found at %s" % (root, targetSubDir))
+            missing.append(os.path.normpath(root))
             continue
 
         # verify that each file in root exists in targetSubDir
-        count = 0
         for sourceFile in files:
             # skip symbolic links
-            if os.path.islink(root + '/' + sourceFile):
+            if os.path.islink(os.path.join(root, sourceFile)):
                 continue
 
-            targetFile = targetSubDir + '/' + sourceFile
-            if os.path.exists(targetFile) == False:
+            targetFile = os.path.join(targetSubDir, sourceFile)
+            if not os.path.exists(targetFile):
+                log.debug("%s in %s is missing from %s" % (sourceFile, root, targetSubDir))
+                missing.append(os.path.join(os.path.normpath(root), sourceFile))
 
-                # print header if this is the first missing file
-                count = count + 1
-                if count == 1:
-                    print
-                    print "Files in %s missing from %s" % (root, targetSubDir)
-                missing.append(root.replace('\\\\', '\\') + '\\' + sourceFile)
-                print "\t%s" % (sourceFile)
+            if os.path.exists(targetFile) and not os.path.isfile(targetFile):
+                log.debug("%s in %s is not a valid file in %s" % (sourceFile, root, targetSubDir))
 
-        # verify that each file in root is indeed a file in targetSubDir
-        count = 0
-        for sourceFile in files:
-
-            # skip symbolic links
-            if os.path.islink(root + '/' + sourceFile):
-                continue
-
-            targetFile = targetSubDir + '/' + sourceFile
-            if os.path.exists(targetFile) == True and os.path.isfile(targetFile) == False:
-
-                # print header if this is the first missing file
-                count = count + 1
-                if count == 1:
-                    print
-                    print "Files in %s not valid files in %s" % (root, targetSubDir)
-
-                print "\t%s" % (sourceFile)
-
-        # now diff the source and target files
-        count = 0
-        for sourceFile in files:
-
-            # skip symbolic links
-            if os.path.islink(root + '/' + sourceFile):
-                continue
-
-            targetFile = targetSubDir + '/' + sourceFile
     return missing
 
 
@@ -193,7 +186,7 @@ def main():
     # Try load config for specified game.
     try:
         fallback = config["fallback"]
-        if choice != None:
+        if choice is not None:
             working = config[choice]
         else:
             working = config[sys.argv[1]]
@@ -220,7 +213,7 @@ def main():
     start_time = time.mktime(time.gmtime())
 
     # Create temp directory
-    if os.path.isdir(tempDir) != True:
+    if not os.path.isdir(tempDir):
         os.mkdir(tempDir)
     else:
         print "Johnny: \tCAPTAIN, WE HAVE REMNANTS OF AN OLD TEMPDIR!"
@@ -232,7 +225,7 @@ def main():
 
     # Copy files to temp dir.
     print "Copying files to temp directory"
-    copyToTempdir = r'xcopy "{source!s}" "{destination!s}" /E /Q'.format(source = gameFolder, destination = tempDir)
+    copyToTempdir = r'xcopy "{source!s}" "{destination!s}" /E /Q'.format(source=gameFolder, destination=tempDir)
     returnCopyToTempdir = subprocess.call(copyToTempdir, shell=True)
     if returnCopyToTempdir != 0:
         shutil.rmtree(tempDir)
@@ -255,7 +248,7 @@ def main():
     for vpk in vpk_dirs:
         print "Extracting vpk: {}".format(vpk)
 
-        command = "{hle} -s -p {vpk} -d {dest} -e root".format(hle = hlExtract, vpk = vpk, dest = tempDir)
+        command = "{hle} -s -p {vpk} -d {dest} -e root".format(hle=hlExtract, vpk=vpk, dest=tempDir)
         return_code = subprocess.call(command)
         assert return_code == 0
 
@@ -316,4 +309,5 @@ def main():
     subprocess.Popen(['git', 'commit'] + commit_message, shell=True, cwd=workingRepoDir).communicate()
     print "Finished. Time taken: {} seconds".format(time.mktime(time.gmtime()) - start_time)
 if __name__ == "__main__":
-    main()
+    pass
+    #main()
