@@ -1,0 +1,236 @@
+<includeonly>{{#if:{{{displaytitle|}}}||{{#if:{{{year|}}}|{{DISPLAYTITLE:{{patch name|{{{month}}}|{{{day}}}|{{{year}}}|date=true|no-link=yes}}}}}}}}</includeonly>{{Navbox
+
+| bodystyle  = margin-bottom: 0.75em; border: 1px solid #aaa;
+| groupstyle = font-size: 105%; background: #B2D7E9;
+
+| group1 = [[{{#switch:{{lc:{{{game|}}}}}
+   | dota2beta
+   | #default = Patches
+   }}{{if lang}}|{{lang
+  | ar = تحديثات
+  | cs = Patche
+  | da = Patches
+  | de = Patches
+  | en = Patches
+  | es = Parches
+  | fi = Päivitykset
+  | fr = Patchs
+  | hu = Patchek
+  | it = Patch
+  | ja = パッチ
+  | ko = 패치
+  | nl = Patches
+  | pl = Aktualizacje
+  | pt = Atualizações
+  | pt-br = Atualizações
+  | ro = Actualizări
+  | ru = Обновление
+  | sv = Patchar
+  | tr = Güncellemeler
+  | zh-hans = 更新
+  | zh-hant = 更新
+  }}]]{{#switch:{{lc:{{{game|}}}}}
+   | test = {{ns:0}}<!-- Hide this for Test patches -->
+   | #default = <span style="color:#555;">&nbsp;([[{{lang date|force=en|1={{updates|type=dota2-patch-month}}}} {{updates|type=dota2-patch-day}}, {{updates|type=dota2-patch-year}} Patch{{if lang}}|{{lang
+    | ar = أخرى
+    | cs = nejnovější
+    | da = seneste
+    | de = neuester
+    | en = latest
+    | es = último
+    | fr = dernier
+    | hu = legutóbbi
+    | it = ultima
+    | ja = 最新
+    | ko = 최신
+    | nl = nieuwste
+    | pl = najnowsza
+    | pt = última
+    | pt-br = última
+    | ro = ultima
+    | ru = последнее
+    | tr = en son
+    | zh-hans = 最新
+    | zh-hant = 最新
+    }}]])</span>
+   }}
+
+| list1  = {{Navbox with columns|child
+
+ | colstyle  = background: #DEE8ED; text-align: center; font-size: 105%;
+ | fullwidth = true
+
+ | col1 = ←&nbsp;{{#if: {{{before|}}} | {{{before}}} | {{common string|N/A}}}}
+ | col2 = '''{{#if: {{{year|}}}|{{patch name|{{{month}}}|{{{day}}}|{{{year}}}|date=true|no-link=yes}}|{{{current|{{BASEPAGENAME}}}}}}}'''
+ | col3 = {{#if: {{{after|}}} | {{{after}}} | {{common string|N/A}}}}&nbsp;→
+
+ }}
+}}
+<div style="background-color: #FDFAF8; border: 1px solid #aaa; margin: 0.75em 0; padding: 0.75em 1em; padding-bottom: 1em;">
+{{hatnote
+| 1 = {{#if:{{{source|}}}
+  | {{lang
+    | ar = المصدر
+    | cs = Zdroj
+    | da = Kilde
+    | de = Quelle
+    | en = Source
+    | es = Fuente
+    | fr = Source
+    | fi = Lähde
+    | hu = Forrás
+    | it = Fonte
+    | ja = ソース
+    | ko = 원본
+    | nl = Bron
+    | pl = Źródło
+    | pt = Fonte
+    | pt-br = Fonte
+    | ro = Sursă
+    | ru = Источник
+    | sv = Källa
+    | tr = Kaynak
+    | zh-hans = 来源
+    | zh-hant = 來源
+    }}:&nbsp;[{{{source}}} {{{source-title|{{{source}}}}}}]{{if lang|1=|2=&nbsp;{{lang icon|1={{{source-lang|en}}}}}}}<!--
+-->{{#if:{{{source2|}}}
+       |,&nbsp;[{{{source2}}} {{{source2-title|{{{source2}}}}}}]{{if lang|1=|2=&nbsp;{{lang icon|1={{{source2-lang|en}}}}}}}<!--
+    -->{{#if:{{{source3|}}}
+        |,&nbsp;[{{{source3}}} {{{source3-title|{{{source3}}}}}}]{{if lang|1=|2=&nbsp;{{lang icon|1={{{source3-lang|en}}}}}}}<!--
+     -->{{#if:{{{source4|}}}
+          |,&nbsp;[{{{source4}}} {{{source4-title|{{{source4}}}}}}]{{if lang|1=|2=&nbsp;{{lang icon|1={{{source4-lang|en}}}}}}}<!--
+       -->{{#if:{{{source5|}}}
+            |,&nbsp;[{{{source5}}} {{{source5-title|{{{source5}}}}}}]{{if lang|1=|2=&nbsp;{{lang icon|1={{{source5-lang|en}}}}}}}<!--
+         -->{{#if:{{{source6|}}}
+              |,&nbsp;[{{{source6}}} {{{source6-title|{{{source6}}}}}}]{{if lang|1=|2=&nbsp;{{lang icon|1={{{source6-lang|en}}}}}}}
+            |}}
+          |}}
+        |}}
+      |}}
+  |}}
+  | {{lang
+   | ar = ملحوظة: لا يوجد رابط ملحق
+   | cs = Poznámka: zdrojový odkaz nebyl poskytnut.
+   | da = Obs: Intet kildelink er angivet.
+   | de = Anmerkung: Es wurde keine Quelle angegeben.
+   | en = Note: No source link has been provided.
+   | es = Nota: No se ha especificado el enlace de la fuente.
+   | fi = Huomautus: lähdelinkkiä ei ole annettu.
+   | fr = Note: Aucun lien n'a été fourni.
+   | hu = Megjegyzés: nincs forrás megadva.
+   | it = Nota: non è stata fornita alcuna fonte.
+   | ja = 注: ソースのリンクは提供されていません。
+   | ko = 안내: 원본 링크가 없습니다.
+   | nl = Opmerking: Geen bron is gegeven.
+   | pl = Uwaga: nie istnieje źródłowy link do aktualizacji.
+   | pt = Nota: nenhum link para a fonte foi especificado.
+   | pt-br = Nota: nenhum link para a fonte foi especificado.
+   | ro = Notă: nu a fost specificat link-ul sursei.
+   | ru = Примечание: ссылка на источник отсутствует.
+   | sv = Obs: ingen källa länk har lämnats.
+   | tr = Dikkat: Kaynak belirtilmedi.
+   | zh-hans = 注意：没提供来源连接
+   | zh-hant = 附註：無提供來源連結
+   }}<includeonly>{{if lang
+    | en = [[Category:Patches with no source]]
+    | non-en = [[Category:Patches with no source/lang|{{SUBPAGENAME}} {{BASEPAGENAME}}]]
+    }}</includeonly>
+  }}
+}}{{#if:{{{updatelink|}}}|
+{{hatnote|1={{lang
+  | ar = صفحة تحديث الرسمية
+  | cs = Oficiální stránka
+  | da = Officielle opdateringsside
+  | de = Offizielle Update Seite
+  | en = Official update page
+  | es = Página oficial del parche
+  | fi = Virallinen päivityssivu
+  | fr = Lien officiel
+  | hu = Hivatalos frissítési oldal
+  | it = Pagina ufficiale dell'aggiornamento
+  | ja = 公式アップデートページ
+  | ko = 공식 업데이트 페이지
+  | nl = Officiële Update Pagina
+  | pl = Oficjalna strona aktualizacji
+  | pt = Página oficial da atualização
+  | pt-br = Página oficial da atualização
+  | ro = Pagina oficială a actualizării
+  | ru = Официальная страница обновления
+  | sv = Officiella uppdaternigs-sidan
+  | tr = Resmî güncelleme sayfası
+  | zh-hans = 宫方更新网页
+  | zh-hant = 官方更新頁面
+  }}:&nbsp;[{{{updatelink}}} {{{update|{{{updatelink}}}}}}]{{if lang|1=|2=&nbsp;{{lang icon|1={{{update-lang|en}}}}}}}}}
+|}} __NOEDITSECTION__
+=={{lang
+  | ar = تفاصيل التحديث
+  | cs = Patch poznámky
+  | de = Patch Mitschrift
+  | da = Patchnoter
+  | en = Patch notes
+  | es = Notas del parche
+  | fi = Päivityksen tiedot
+  | fr = Journal des Modifications
+  | hu = Változtatások a patchben
+  | it = Contenuti dell'aggiornamento
+  | ja = パッチノート
+  | ko = 패치 내용
+  | nl = Patch notities
+  | pl = Lista zmian
+  | pt = Notas da atualização
+  | pt-br = Notas da atualização
+  | ro = Notele actualizării
+  | ru = Содержание обновления
+  | sv = Patchanteckningar
+  | tr = Güncelleme notları
+  | zh-hans = 更新内容
+  | zh-hant = 更新內容
+  }}==
+{{{notes}}}{{#if: {{{diff-1|}}}|
+{{Patch layout/Diff header}}<span></span><!-- Necessary to make headers work -->
+{{lang
+| en = === Patch 1 ===
+| ru = === Обновление 1 ===
+}}
+
+<div class="diffname {{{diff-1|}}}">{{PatchDiff/{{{diff-1|}}}}}</div>{{#if: {{{diff-2|}}}|<span></span><!-- Necessary to make headers work -->
+{{lang
+| en = === Patch 2 ===
+| ru = === Обновление 2 ===
+}}
+<div class="diffname {{{diff-2|}}}">{{PatchDiff/{{{diff-2|}}}}}</div>}}{{#if: {{{diff-3|}}}|<span></span><!-- Necessary to make headers work -->
+{{lang
+| en = === Patch 3 ===
+| ru = === Обновление 3 ===
+}}
+<div class="diffname {{{diff-3|}}}">{{PatchDiff/{{{diff-3|}}}}}</div>}}{{#if: {{{diff-4|}}}|<span></span><!-- Necessary to make headers work -->
+{{lang
+| en = === Patch 4 ===
+| ru = === Обновление 4 ===
+}}
+<div class="diffname {{{diff-4|}}}">{{PatchDiff/{{{diff-4|}}}}}</div>}}{{#if: {{{diff-5|}}}|<span></span><!-- Necessary to make headers work -->
+{{lang
+| en = === Patch 5 ===
+| ru = === Обновление 5 ===
+}}
+<div class="diffname {{{diff-5|}}}">{{PatchDiff/{{{diff-5|}}}}}</div>}}{{#if: {{{diff-6|}}}|<span></span><!-- Necessary to make headers work -->
+{{lang
+| en = === Patch 6 ===
+| ru = === Обновление 6 ===
+}}
+<div class="diffname-{{{diff-6|}}}">{{PatchDiff/{{{diff-6|}}}}}</div>}}
+|{{#if: {{{hide-diff|}}}
+  | {{ns:0}}
+  |{{#ifexist:Template:PatchDiff/{{BASEPAGENAME}} |
+{{Patch layout/Diff header}}
+<div class="diffname {{BASEPAGENAME}}">{{PatchDiff/{{BASEPAGENAME}}}}</div>
+}}}}}}
+</div><includeonly>{{lang cat|{{#switch:{{lc:{{{game|}}}}}
+ | test = Patches (Test)
+
+ | #default = Patches
+ }}}}</includeonly><noinclude>
+{{translation switching|all languages except: no}}
+{{Template doc}}
+[[Category:Formatting templates|Patch layout]]
+</noinclude>

@@ -1,0 +1,6 @@
+==Summary==
+Loading animation while the patch diff loads
+
+{{Externally linked}}
+== Licensing ==
+{{PD}}

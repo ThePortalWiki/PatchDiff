@@ -1,0 +1,62 @@
+<span></span><!-- Necessary to make the header work properly -->
+=={{lang
+ | cs = Změněné soubory
+ | da = Filer ændret
+ | de = Geänderte Dateien
+ | en = Files changed
+ | es = Archivos modificados
+ | fi = Muutetut tiedostot
+ | fr = Fichiers changés
+ | it = File modificati
+ | ja = 変更のあったファイル
+ | ko = 변경된 파일
+ | nl = Bestanden veranderd
+ | pl = Zmienione pliki
+ | pt-br = Arquivos Modificados
+ | ru = Измененные файлы
+ | sv = Filer ändrade
+ | zh-hant = 變更檔案
+ | zh-hans = 变更文件
+ }}==
+:<small>{{lang
+ | cs = '''''Poznámka''': seznam změn níže je generován pomocí {{w|diff|diffu}} dvou revizí hry.''
+ | de = '''''Anmerkung''': Der folgende Changelog wurde aus dem {{w|diff|Unterschied|lang=de}} zweier Versionen des Spiels erstellt.''
+ | da = '''''Note''': Listen nedenunder er genereret fra en {{w|diff|lang=da}} mellem to revisioner af spillet.''
+ | en = '''''Note''': The changelog below is generated from a {{w|diff}} of two revisions of the game.''
+ | es = '''''Nota''': El registro de cambios se genera desde un {{w|diff|lang=es}} de dos revisiones del juego.''
+ | fi = '''''Huomaa''': Allaoleva muutostiedosto on automaattisesti luotu {{w|diff|lang=fi}} pelin kahdesta versiosta.''
+ | fr = '''''Note''': Le journal des modifications ci-dessous est généré à partir des {{w|diff|différences|lang=fr}} entre deux révisions du jeu.''
+ | it = '''''Nota''': Il seguente log dei cambiamenti è generato da una {{w|diff|lang=it}} tra due revisioni del gioco.''
+ | ja = '''''注''': 下記の変更ログは{{w|diff|lang=ja}}によってゲームの2つのリビジョンから生成されています。
+ | ko = '''''추신''': 아래의 변경된 파일 목록은 두 {{w|diff|다른}} 버전의 게임으로부터 산출해냈습니다.
+ | nl = '''''Opmerking''': Dit logboek van veranderingen is gecreëerd aan de hand van {{w|diff|veranderingen|lang=nl}} tussen twee herzieningen van het spel.''
+ | pl = '''''Uwaga''': poniższa lista zmian jest wygenerowana na podstawie {{w|diff|różnicy|lang=pl}} pomiędzy dwoma rewizjami gry.''
+ | pt-br = '''''Nota''': o log de mudanças abaixo é gerado pela {{w|diff|diferença|lang=pt}} de duas revisões do jogo.''
+ | ru = '''''Примечание''': нижеприведенные изменения создаются из двух {{w|diff|разных|lang=ru}} пересмотров игры.''
+ | sv = '''''Notera''': Ändringsloggen nedanför är generad från en {{w|diff|jämförelse|lang=sv}} mellan två versioner av spelet.
+ | zh-hant = 註：下述變更紀錄是由比較 {{w|diff|lang=ja}} 中的兩次修改內容而得的。
+ | zh-hans = 注：下列变更记录是通过比较两次修订版本的 {{w|diff|lang=zh}} 而得到的。
+ }}</small>
+<div style="font-size:95%; background:#dfe8ed; padding:0.25em 0.5em;">'''{{lang
+ | cs = Změny v revizi
+ | da = Revision ændringer
+ | de = Versionsänderungen
+ | en = Revision changes
+ | es = Cambios de la revisión
+ | fi = Versiomuutokset
+ | fr = Changements de la révision
+ | it = Cambiamenti della revisione
+ | ja = リビジョンの違い
+ | ko = 변경 사항
+ | nl = Herzieningsveranderingen
+ | pl = Zmiany w rewizji
+ | pt-br = Mudanças da revisão
+ | ru = Изменения в версии
+ | sv = Versionsändringar
+ | zh-hant = 修改變更
+ | zh-hans = 修订版本的变更
+ }}'''</div>
+<noinclude>
+{{translation switching|all languages except: no}}
+[[Category:Formatting templates|Patch layout/Diff header]]
+</noinclude>

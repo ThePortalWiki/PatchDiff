@@ -1,0 +1,132 @@
+<includeonly>{{#switch:{{{1|{{{type|}}}}}}
+
+| dota2-patch = [[{{lang date|force=en|1={{{dota2-patch-month}}}}} {{{dota2-patch-day}}}, {{{dota2-patch-year}}} Patch{{if lang}}|{{lang
+ | cs = {{{dota2-patch-day}}} {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-year}}}
+ | de = {{{dota2-patch-day}}}. {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-year}}}
+ | en = {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-day}}}, {{{dota2-patch-year}}}
+ | es = {{{dota2-patch-day}}} de {{lang date|{{{dota2-patch-month}}}}} de {{{dota2-patch-year}}}
+ | fi = {{{dota2-patch-day}}}. {{lang date|{{{dota2-patch-month}}}}}, {{{dota2-patch-year}}}
+ | fr = {{{dota2-patch-day}}} {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-year}}}
+ | hu = {{{dota2-patch-year}}}. {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-day}}}.
+ | it = {{{dota2-patch-day}}} {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-year}}}
+ | ja = {{{dota2-patch-year}}}年{{{dota2-patch-month}}}月{{{dota2-patch-day}}}日
+ | pl = {{{dota2-patch-day}}} {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-year}}}
+ | pt = {{{dota2-patch-day}}} de {{lang date|{{{dota2-patch-month}}}}} de {{{dota2-patch-year}}}
+ | pt-br = {{{dota2-patch-day}}} de {{lang date|{{{dota2-patch-month}}}}} de {{{dota2-patch-year}}}
+ | ro = {{{dota2-patch-day}}} {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-year}}}
+ | ru = {{{dota2-patch-day}}} {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-year}}}
+ | tr = {{{dota2-patch-day}}} {{lang date|{{{dota2-patch-month}}}}} {{{dota2-patch-year}}}
+ | zh-hans = {{{dota2-patch-year}}}年{{{dota2-patch-month}}}月{{{dota2-patch-day}}}日
+ | zh-hant = {{{dota2-patch-year}}}年{{{dota2-patch-month}}}月{{{dota2-patch-day}}}日
+ }}]]
+
+| dota2-test-patch = [[{{lang date|force=en|1={{{dota2-test-patch-month}}}}} {{{dota2-test-patch-day}}}, {{{dota2-test-patch-year}}} Patch (Test){{if lang}}|{{lang
+ | cs = {{{dota2-test-patch-day}}} {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-year}}}
+ | de = {{{dota2-test-patch-day}}}. {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-year}}}
+ | en = {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-day}}}, {{{dota2-test-patch-year}}}
+ | es = {{{dota2-test-patch-day}}} de {{lang date|{{{dota2-test-patch-month}}}}} de {{{dota2-test-patch-year}}}
+ | fi = {{{dota2-test-patch-day}}}. {{lang date|{{{dota2-test-patch-month}}}}}, {{{dota2-test-patch-year}}}
+ | fr = {{{dota2-test-patch-day}}} {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-year}}}
+ | hu = {{{dota2-test-patch-year}}}. {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-day}}}.
+ | it = {{{dota2-test-patch-day}}} {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-year}}}
+ | ja = {{{dota2-test-patch-year}}}年{{{dota2-test-patch-month}}}月{{{dota2-test-patch-day}}}日
+ | pl = {{{dota2-test-patch-day}}} {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-year}}}
+ | pt = {{{dota2-test-patch-day}}} de {{lang date|{{{dota2-test-patch-month}}}}} de {{{dota2-test-patch-year}}}
+ | pt-br = {{{dota2-test-patch-day}}} de {{lang date|{{{dota2-test-patch-month}}}}} de {{{dota2-test-patch-year}}}
+ | ro = {{{dota2-test-patch-day}}} {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-year}}}
+ | ru = {{{dota2-test-patch-day}}} {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-year}}}
+ | tr = {{{dota2-test-patch-day}}} {{lang date|{{{dota2-test-patch-month}}}}} {{{dota2-test-patch-year}}}
+ | zh-hans = {{{dota2-test-patch-year}}}年{{{dota2-test-patch-month}}}月{{{dota2-test-patch-day}}}日
+ | zh-hant = {{{dota2-test-patch-year}}}年{{{dota2-test-patch-month}}}月{{{dota2-test-patch-day}}}日
+ }}]]
+
+| blog = [{{{blog-url}}} {{lang
+ | cs = {{{blog-day}}} {{lang date|1={{{blog-month}}}}} {{{blog-year}}}
+ | de = {{{blog-day}}}. {{lang date|1={{{blog-month}}}}} {{{blog-year}}}
+ | en = {{lang date|{{{blog-month}}}}} {{{blog-day}}}, {{{blog-year}}}
+ | es = {{{blog-day}}} de {{lang date|1={{{blog-month}}}}} de {{{blog-year}}}
+ | fi = {{{blog-day}}}. {{lang date|1={{{blog-month}}}}}, {{{blog-year}}}
+ | fr = {{{blog-day}}} {{lang date|1={{{blog-month}}}}} {{{blog-year}}}
+ | hu = {{{blog-year}}}. {{lang date|1={{{blog-month}}}}} {{{blog-day}}}.
+ | it = {{{blog-day}}} {{lang date|1={{{blog-month}}}}} {{{blog-year}}}
+ | ja = {{{blog-year}}}年{{{blog-month}}}月{{{blog-day}}}日
+ | pl = {{{blog-day}}} {{lang date|1={{{blog-month}}}}} {{{blog-year}}}
+ | pt = {{{blog-day}}} de {{lang date|1={{{blog-month}}}}} de {{{blog-year}}}
+ | pt-br = {{{blog-day}}} de {{lang date|1={{{blog-month}}}}} de {{{blog-year}}}
+ | ro = {{{blog-day}}} {{lang date|1={{{blog-month}}}}} {{{blog-year}}}
+ | ru = {{{blog-day}}} {{lang date|1={{{blog-month}}}}} {{{blog-year}}}
+ | tr = {{{blog-day}}} {{lang date|1={{{blog-month}}}}} {{{blog-year}}}
+ | zh-hans = {{{blog-year}}}年{{{blog-month}}}月{{{blog-day}}}日
+ | zh-hant = {{{blog-year}}}年{{{blog-month}}}月{{{blog-day}}}日
+ }}]
+
+| dota2-patch-daysago      = {{Days ago|1={{{dota2-patch-year}}}|2={{{dota2-patch-month}}}|3={{{dota2-patch-day}}}}}
+
+| dota2-test-patch-daysago      = {{Days ago|1={{{dota2-test-patch-year}}}|2={{{dota2-test-patch-month}}}|3={{{dota2-test-patch-day}}}}}
+
+| blog-daysago       = {{Days ago|1={{{blog-year}}}|2={{{blog-month}}}|3={{{blog-day}}}}}
+
+| dota2-patch-month = {{{dota2-patch-month|}}}
+| dota2-patch-day = {{{dota2-patch-day|}}}
+| dota2-patch-year = {{{dota2-patch-year|}}}
+
+| dota2-test-patch-month = {{{dota2-test-patch-month|}}}
+| dota2-test-patch-day = {{{dota2-test-patch-day|}}}
+| dota2-test-patch-year = {{{dota2-test-patch-year|}}}
+
+
+| blog-month = {{{blog-month|}}}
+| blog-day = {{{blog-day|}}}
+| blog-year = {{{blog-year|}}}
+| blog-url = {{{blog-url|}}}
+
+| #default = <span class="error small">ERROR {{tl|Updates/core}}: type doesn't match.</span>
+
+}}</includeonly><noinclude>
+{{translation switching|cs, es, de, fi, fr, hu, it, pl, pt, pt-br, ro, ru, tr}}
+{{doc begin}}
+This template takes values from '''{{tl|Updates}}''' and displays them in different ways.
+
+=== Parameters ===
+'''Links'''
+
+:; ''dota2-patch''
+:: Provides a lang-formatted proper link to the latest patch article.
+
+:; ''dota2-test-patch''
+:: Provides a lang-formatted proper link to the latest [[Dota 2 Test]] patch article.
+
+:; ''blog''
+:: Provides a lang-formatted proper external link to the latest blog post based on the given ID.
+
+'''Days ago'''
+
+:; ''dota2-patch-daysago'', ''dota2-test-patch-daysago'', ''blog-daysago''
+:: Uses {{tl|Days ago}} to render the days since the last patch / blog update (bracketed).
+
+'''Raw values'''
+
+:: The following raw values are available as they are given in {{tl|Updates}} so they can be used anywhere.
+
+<pre>
+| dota2-patch-month =
+| dota2-patch-day =
+| dota2-patch-year =
+
+| dota2-test-patch-month =
+| dota2-test-patch-day =
+| dota2-test-patch-year =
+
+| blog-month =
+| blog-day =
+| blog-year =
+| blog-url =
+</pre>
+
+=== See also ===
+* {{tl|Updates}}
+* {{tl|Days ago}}
+
+[[Category:Templates|Updates/core]]
+[[Category:Main Page]]
+</noinclude>

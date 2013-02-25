@@ -1,0 +1,29 @@
+<includeonly>{{Updates/core | type = {{{type|{{{1|}}}}}}
+<!-- DATES ACCORDING TO PST (UTC-8) - VALVE'S TIMEZONE
+
+PLEASE INCLUDE LEADING ZEROES ON SINGLE DIGITS -->
+
+<!-- Update this section with patches relating to the main game - Dota 2 Beta -->
+| dota2-patch-month = 2
+| dota2-patch-day   = 21
+| dota2-patch-year  = 2013
+
+<!-- Update this section with patches relating to the test game - Dota 2 Test -->
+| dota2-test-patch-month =  2
+| dota2-test-patch-day =  20
+| dota2-test-patch-year =  2013
+
+<!-- Update this section with blog posts -->
+| blog-month  = 2
+| blog-day    = 21
+| blog-year   = 2013
+| blog-url    = {{lang
+ |en = http://blog.dota2.com/2013/02/hero-builds/
+}}
+}}</includeonly><noinclude>
+* Update this template (instead of the Main Page) whenever a blog post or patch is released.
+* Changes will be pushed to all other language pages.
+* To add language translations please see [[Template:Updates/core]], ''not'' this page.
+
+[[Category:Main Page]]
+</noinclude>

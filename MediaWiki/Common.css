@@ -1,0 +1,112 @@
+/* Diff styles */
+.diff-file {
+    font-family: monospace;
+}
+.diff-contents {
+    display: none; /* Hidden by default */
+    margin: 4px;
+    margin-left: 64px;
+    border-top: 1px solid #E0E0E0;
+    border-bottom: 1px solid #E0E0E0;
+    background: #F9F9F9;
+}
+.diff-name-text, .diff-name-binary .diff-file-renamed {
+    display: block;
+}
+.diff-name-binary, .diff-file-renamed {
+    color: #606060;
+}
+.diff-name-text {
+    font-weight: bold;
+    cursor: pointer;
+}
+.diff-file-deleted .diff-name-text {
+    font-weight: normal;
+    cursor: auto;
+    color: #6F0000;
+}
+.diff-name-text:before {
+    content: "[+] ";
+}
+.diff-name-binary:before {
+    content: "[B] ";
+}
+.diff-file-renamed:before {
+    content: "[R] ";
+}
+.diff-name-text:hover {
+    text-decoration: underline;
+    color: #303090;
+}
+.diff-file-deleted .diff-name-text:hover {
+    text-decoration: none;
+    color: #6F0000;
+}
+.diff-line-entry, .diff-line-ellipsis {
+    display: block;
+    white-space: pre-wrap;
+    clear: both;
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+}
+.diff-line-ellipsis {
+    background: #FFFFFF;
+}
+.diff-line-old, .diff-line-new {
+    width: 52px;
+    text-align: right;
+    border-right: 1px solid #E0E0E0;
+    padding-right: 4px;
+    color: #696969;
+    float: left;
+    font-size: 0.9em;
+}
+.diff-line-na {
+    font-style: italic;
+    color: #A0A0A0;
+}
+.diff-line-entry .diff-line-old, .diff-line-entry .diff-line-new {
+    border-bottom: 1px solid #D0D0D0;
+    margin-bottom: -1px;
+}
+.diff-line-ellipsis + .diff-line-entry .diff-line-old, .diff-line-ellipsis + .diff-line-entry .diff-line-new {
+    border-top: 1px solid #D0D0D0;
+    margin-top: -1px;
+}
+.diff-line-ellipsis {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 1.4em;
+    color: #666666;
+    text-indent: 114px;
+}
+.diff-line-add .diff-line {
+    background: #D9FFD9;
+    border-left: 1px solid #60CC60;
+    border-right: 1px solid #60CC60;
+}
+.diff-line-add.diff-line-first .diff-line {
+    border-top: 1px solid #60CC60;
+}
+.diff-line-add.diff-line-last .diff-line {
+    border-bottom: 1px solid #60CC60;
+}
+.diff-line-remove .diff-line {
+    background: #FFD9D9;
+    border-left: 1px solid #CC6060;
+    border-right: 1px solid #CC6060;
+}
+.diff-line-remove.diff-line-first .diff-line {
+    border-top: 1px solid #CC6060;
+}
+.diff-line-remove.diff-line-last .diff-line {
+    border-bottom: 1px solid #CC6060;
+}
+.diff-line {
+    display: block;
+    padding-left: 4px;
+    margin-left: 114px;
+}
+.diff-data-requested {
+    background: url(/images/4/43/Patch_diff_loading.gif) right no-repeat;
+}
