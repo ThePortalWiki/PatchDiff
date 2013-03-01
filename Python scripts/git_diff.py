@@ -7,16 +7,39 @@ import shutil
 import fnmatch
 import logging as log
 import argparse
+import datetime
+import calendar
 import chardet
 from prettydiff import poot
 
 from config import config
 
+
+today = datetime.date.today()
+
 parser = argparse.ArgumentParser(
     description="Generate patch diff for Valve games")
 
 parser.add_argument("game",
-                    help="the game to generate a patch diff for e.g. 'tf2'")
+                    help="the game to generate a patch diff for, corresponds to a config entry")
+
+parser.add_argument("day",
+                    type=int,
+                    nargs="?",
+                    default=today.day,
+                    help="the calendar day of the patch, default: today")
+
+parser.add_argument("month",
+                    type=int,
+                    nargs="?",
+                    default=today.month,
+                    help="the calendar month of the patch, default: current month")
+
+parser.add_argument("year",
+                    type=int,
+                    nargs="?",
+                    default=today.year,
+                    help="the calendar month of the patch, default: current month")
 
 parser.add_argument("-v",
                     "--verbose",
@@ -24,9 +47,26 @@ parser.add_argument("-v",
                     action="store_true",
                     help="be verbose about what we are doing")
 
+parser.add_argument("-n",
+                    "--patch-number",
+                    type=int,
+                    dest="patch_number",
+                    action="store",
+                    help="the patch number of the day, e.g: 2")
+
+if len(sys.argv) == 1:
+    parser.print_help()
+    sys.exit(0)
+
 args = parser.parse_args()
-print args.game
-print args.verbose
+patch = "%s %02d, %d Patch" % (
+                                calendar.month_name[args.month],
+                                args.day,
+                                args.year)
+
+if args.patch_number:
+    patch = "%s %d" % (patch, args.patch_number)
+print patch
 sys.exit()
 
 log.basicConfig(
@@ -98,78 +138,32 @@ def moveDirectory(root_src_dir, root_dst_dir):
         dst_dir = src_dir.replace(root_src_dir, root_dst_dir)
         if not os.path.exists(dst_dir):
             os.mkdir(dst_dir)
-        for file_ in files:
-            src_file = os.path.join(src_dir, file_)
-            dst_file = os.path.join(dst_dir, file_)
+        for f in files:
+            src_file = os.path.join(src_dir, f)
+            dst_file = os.path.join(dst_dir, f)
             if os.path.exists(dst_file):
                 os.remove(dst_file)
             shutil.move(src_file, dst_dir)
 
 
-def returnEncoding(string):
+def get_encoding(string):
+    """Returns character encoding"""
     encoding = chardet.detect(string)
     return encoding['encoding']
 
-
-def getPatchName(format):
-    choices = []
-    choice_modifiers = [24, 0, -24, -48, -72]
-
-    for mod in choice_modifiers:
-        suggestion = time.strftime(format, time.localtime(time.time() + (mod * 60 * 60)))
-        choices.append(suggestion)
-    choices.append("Custom")
-    choice = get_choice(choices)
-    if choice == "Custom":
-        name = str(raw_input("Manually enter the correct page name: "))
-    else:
-        name = choice
-
-    if str(raw_input("Please confirm patch page name: {}  y\\n ".format(name))) != "y":
-        suck()
-
-    if str(raw_input("Is this the first patch of the day? y\\n ")) == "n":
-        name = name + " {n}".format(n=str(raw_input("If this is the nth patch of the day, what is n?")))
-
-    return name
-
-
-def txtToUtf8(dir):
+def txt_to_utf8(dir):
+    """Walks a directory tree and converts any txt files to UTF-8 encoding"""
     for root, dirs, files in os.walk(dir):
         for f in files:
-            if f[-4:] == r'.txt':
+            if f.endswith(".txt"):
                 try:
                     fullpath = os.path.join(root, f)
                     filecontents = open(fullpath, 'rb').read()
-                    encoding = returnEncoding(filecontents)
+                    encoding = get_encoding(filecontents)
                     utf8string = unicode(filecontents, encoding).encode("utf-8")
                     open(fullpath, 'wb').write(utf8string)
-                except:
-                    pass
-
-
-def suck():
-    raw_input("You suck")
-    sys.exit()
-
-
-def get_choice(choices):
-    index = 1
-    for item in choices:
-        print "\t{}: {}".format(index, item)
-        index += 1
-
-    choice_input = raw_input("Input the number of your choice: ")
-    if choice_input.isdigit():
-        choice_input = int(choice_input)
-        if choice_input <= 0 or choice_input > len(choices):
-            suck()
-        else:
-            choice = choices[choice_input - 1]
-    else:
-        suck()
-    return choice
-
+                except Exception, e:
+                    log.warning("%s: %s" % (f, e))
 
 def main():
     choice = None
@@ -274,7 +268,7 @@ def main():
 
     # Convert .txt files to utf-8
     print "\nConverting relevant files to utf-8 and decrypting ctx files"
-    txtToUtf8(tempDir)
+    txt_to_utf8(tempDir)
 
     # Moving files to working repository.
     print "\nMoving files to working repository"
