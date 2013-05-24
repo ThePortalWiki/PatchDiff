@@ -90,7 +90,11 @@ def pootDiff(wiki, patchName, gitRepo):
                 contents = u''
             else:
                 isBinary = False
-                contents = u(re.search(textFileRe, diff).group(3)).strip()
+                try:
+                    contents = u(re.search(textFileRe, diff).group(3)).strip()
+                except AttributeError:
+                    # If file exists but is empty the regex won't match.
+                    contents = u''
 
             files.append({
                 'name': filename,
